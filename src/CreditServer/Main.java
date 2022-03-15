@@ -16,14 +16,16 @@ public class Main
 
 	public static void readCustomerCredit(String fileName, BST<Customer> bst)
 	{
-		try (BufferedReader br = new BufferedReader(new FileReader(fileName)))
+		try
 		{
+			BufferedReader br = new BufferedReader(new FileReader(fileName));
 		    String line;
 		    while ((line = br.readLine()) != null)
 		    {
 		        String[] values = line.split(COMMA_DELIMITER);
 		        bst.insert(Integer.parseInt(values[0]), new Customer(values[1], Boolean.parseBoolean(values[2]))); 
 		    }
+		    br.close();
 		}
 	    catch( Exception e )
         {
