@@ -7,11 +7,11 @@ package CreditServer;
  */
 class BST<T>
 {
-	/**
-	 * Items in a BST are Nodes with type T.	
-	 * @author David Cleary
-	 * @param <T>
-	 */
+    /**
+     * Items in a BST are Nodes with type T.	
+     * @author David Cleary
+     * @param <T>
+     */
     class Node<T>
     {
     	/**
@@ -175,7 +175,7 @@ class BST<T>
         // A leaf node is reached in the BST
         if (root == null)
         { 
-        	// Create a new Node
+            // Create a new Node
             root = new Node<T>(key, data); 
             return root; 
         } 
@@ -183,13 +183,13 @@ class BST<T>
         // New key is less than the current root key
         if (key < root.key)     
         {
-        	// Insert into the left subtree
+            // Insert into the left subtree
             root.left = insert_Recursive(root.left, key, data);
         }
         // New key is greater than the current root key
         else if (key > root.key)
         {
-        	// Insert in the right subtree
+            // Insert in the right subtree
             root.right = insert_Recursive(root.right, key, data);
         }
         return root; 
